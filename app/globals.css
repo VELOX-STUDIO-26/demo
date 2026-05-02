@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #0B1F3A;
+    --color-secondary: #1A3C6E;
+    --color-accent: #00A6FB;
+    --color-ice: #F0F6FF;
+    --color-body: #0F172A;
+    --color-muted: #94A3B8;
+    --color-caption: #64748B;
+    --color-border: #DBEAFE;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--color-body);
+    background: #fff;
+    overflow-x: hidden;
+  }
+
+  /* Skip link */
+  .skip-link {
+    @apply absolute -top-10 left-0 z-[9999] bg-accent text-white px-4 py-2 transition-all;
+  }
+  .skip-link:focus {
+    @apply top-0;
+  }
+
+  /* Focus styles */
+  *:focus-visible {
+    @apply outline outline-[3px] outline-accent outline-offset-2;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center bg-accent text-white font-bold text-base rounded-lg px-8 py-3.5 transition-all;
+  }
+  .btn-primary:hover {
+    @apply brightness-110;
+    box-shadow: 0 8px 24px rgba(0,166,251,0.35);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center bg-transparent text-accent font-bold text-base rounded-lg px-8 py-3.5 border-2 border-accent transition-all;
+  }
+  .btn-secondary:hover {
+    background: rgba(0,166,251,0.08);
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center bg-transparent text-white font-bold text-base rounded-lg px-8 py-3.5 border-2 border-white transition-all;
+  }
+  .btn-secondary-dark:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  /* Cards */
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 12px 32px rgba(11,31,58,0.12);
+    border-top: 3px solid var(--color-accent);
+  }
+
+  /* Section overline */
+  .overline {
+    @apply uppercase text-accent font-medium text-[13px] tracking-[0.1em] block mb-3;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply w-full h-[52px] px-4 rounded-lg border border-border bg-white text-base text-body transition-all;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .form-input:focus {
+    @apply border-accent;
+    box-shadow: 0 0 0 3px rgba(0,166,251,0.15);
+  }
+
+  .form-label {
+    @apply block text-caption font-medium text-[13px] tracking-[0.08em] uppercase mb-2;
+  }
+
+  .form-error {
+    @apply hidden text-red-600 text-[13px] mt-1;
+  }
+
+  .form-input.is-invalid {
+    @apply border-red-500;
+  }
+  .form-input.is-invalid + .form-error {
+    @apply block;
+  }
+
+  /* Pills */
+  .pill {
+    @apply inline-block px-4 py-2 rounded-full font-medium text-[13px] whitespace-nowrap cursor-pointer transition-all bg-ice text-primary;
+  }
+  .pill:hover {
+    @apply bg-blue-100;
+  }
+  .pill.is-active {
+    @apply bg-accent text-white;
+  }
+
+  /* Social icons */
+  .social-icon {
+    @apply inline-flex items-center justify-center w-9 h-9 rounded-full border border-white/20 text-white transition-all;
+  }
+  .social-icon:hover {
+    @apply text-accent border-accent;
+  }
+
+  /* FAQ */
+  .faq-item {
+    @apply border-b border-border;
+  }
+  .faq-question {
+    @apply flex items-center justify-between w-full py-4 bg-transparent border-none text-left font-semibold text-base text-body cursor-pointer;
+  }
+  .faq-answer {
+    @apply max-h-0 overflow-hidden text-caption text-[15px] leading-relaxed transition-all;
+  }
+  .faq-item.is-open .faq-answer {
+    @apply max-h-[300px] pb-4;
+  }
+  .faq-icon {
+    @apply transition-transform flex-shrink-0;
+  }
+  .faq-item.is-open .faq-icon {
+    @apply rotate-45;
+  }
+}
+
+@layer utilities {
+  /* Scroll reveal */
+  .reveal {
+    @apply opacity-0 translate-y-6 transition-all duration-500;
+  }
+  .reveal.is-visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Mesh background */
+  .mesh-bg {
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(0,166,251,0.12) 0%, transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(0,166,251,0.08) 0%, transparent 45%);
+  }
+
+  /* Stat number */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    @apply opacity-100 translate-y-0;
+  }
+}

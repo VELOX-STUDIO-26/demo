@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect for client-side routing
+    (function() {
+      const repo = '/demo';
+      const l = window.location;
+      const path = l.pathname;
+
+      // Store the full URL for redirect after 404
+      sessionStorage.redirect = l.href;
+
+      // Redirect to root with the path preserved
+      const redirectUrl =
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        repo + '/?/' +
+        path.slice(repo.length + 1).replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+
+      window.location.replace(redirectUrl);
+    })();
+  </script>
+</head>
+<body>
+  Redirecting to app...
+</body>
+</html>
