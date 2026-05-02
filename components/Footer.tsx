@@ -1,6 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
+
+const logoSrc =
+  process.env.NODE_ENV === "production" ? "/demo/logo.jpg" : "/logo.jpg";
 
 const services = [
   "Brand Strategy",
@@ -28,11 +30,9 @@ export default function Footer() {
           {/* Col 1: Logo & Tagline */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/logo.jpg"
+              <img
+                src={logoSrc}
                 alt="AI METRIX LLC"
-                width={175}
-                height={56}
                 className="h-14 w-auto object-contain rounded"
               />
             </Link>
