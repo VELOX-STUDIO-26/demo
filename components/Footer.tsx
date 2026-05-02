@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
 
 const services = [
@@ -27,9 +28,11 @@ export default function Footer() {
           {/* Col 1: Logo & Tagline */}
           <div>
             <Link href="/" className="inline-block mb-4">
-              <img
+              <Image
                 src="/logo.jpg"
                 alt="AI METRIX LLC"
+                width={175}
+                height={56}
                 className="h-14 w-auto object-contain rounded"
               />
             </Link>

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 
@@ -51,10 +52,13 @@ export default function Header() {
           <div className="flex items-center justify-between h-[72px]">
             {/* Logo */}
             <Link href="/" className="flex items-center">
-              <img
+              <Image
                 src="/logo.jpg"
                 alt="AI METRIX LLC"
+                width={150}
+                height={48}
                 className="h-12 w-auto object-contain"
+                priority
               />
             </Link>
 
