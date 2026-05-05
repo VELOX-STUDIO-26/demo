@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -49,6 +50,15 @@ const industries = [
   { icon: BarChart2, label: "Financial Institutions" },
 ];
 
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about AI METRIX LLC, our mission, and the team behind our AI-powered digital marketing strategies.",
+  alternates: {
+    canonical: "/about/",
+  },
+};
+
 export default function AboutPage() {
   return (
     <>
@@ -88,25 +98,24 @@ export default function AboutPage() {
 >
                 <p
 >
-                  As the founder of AI METRIX LLC, I created this company with a vision to empower
-                  businesses in a rapidly evolving digital world. We combine cutting-edge AI with proven
-                  marketing strategy to give every client a real competitive edge.
-                </p>
-                <p
->
-                  Our work is driven by purpose, performance, and the success of every client we serve.
-                  We believe that technology should amplify your brand's voice, not automate it into obscurity.
+                  As the founder of AI METRIX LLC, I created this digital marketing company with a vision to
+                  empower businesses in a rapidly evolving digital world. I understand that growth today depends
+                  on more than visibility alone; it requires strategy, innovation, and the ability to adapt. That
+                  is why AI METRIX LLC exists: to help businesses transform their ideas into strong brands,
+                  connect with their audiences in meaningful ways, and grow with the support of the best digital
+                  marketing solutions. Our work is driven by purpose, performance, and the success of every
+                  client we serve
                 </p>
               </div>
             </ScrollReveal>
             <ScrollReveal
 >
-              <div className="bg-ice rounded-xl overflow-hidden border border-accent/20 aspect-[4/3]"
+              <div className="bg-ice rounded-xl overflow-hidden border border-accent/20 aspect-[3/4]"
 >
                 <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop"
+                  src="/asset/founder.JPG"
                   alt="Founder portrait"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                 />
               </div>

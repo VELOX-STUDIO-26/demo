@@ -18,8 +18,8 @@ const config: Config = {
         border: "#DBEAFE",
       },
       fontFamily: {
-        heading: ["Space Grotesk", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        heading: ["Grift", "Space Grotesk", "sans-serif"],
+        body: ["Grift", "Inter", "sans-serif"],
       },
       borderRadius: {
         DEFAULT: "8px",

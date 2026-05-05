@@ -1,10 +1,25 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const rawSiteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://aimetrix.com";
+const siteUrl = rawSiteUrl.replace(/\/$/, "");
+const defaultTitle = "AI METRIX LLC - AI-Powered Digital Marketing";
+const defaultDescription =
+  "AI METRIX LLC helps small businesses and growth-focused organizations build stronger brands, increase visibility, and achieve measurable results through AI-powered digital marketing and consulting.";
+const ogImage = "/logo.jpg";
+
 export const metadata: Metadata = {
-  title: "AI METRIX LLC - AI-Powered Digital Marketing",
-  description:
-    "AI METRIX LLC helps small businesses and growth-focused organizations build stronger brands, increase visibility, and achieve measurable results through digital marketing and AI-powered consulting.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: defaultTitle,
+    template: "%s | AI METRIX LLC",
+  },
+  description: defaultDescription,
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   keywords: [
     "AI marketing",
     "digital marketing agency",
@@ -14,14 +29,58 @@ export const metadata: Metadata = {
     "paid advertising",
     "AI consulting",
   ],
-  authors: [{ name: "AI METRIX LLC" }],
+  authors: [{ name: "AI METRIX LLC", url: siteUrl }],
+  creator: "AI METRIX LLC",
+  publisher: "AI METRIX LLC",
   openGraph: {
-    title: "AI METRIX LLC - AI-Powered Digital Marketing",
-    description:
-      "We engineer sustainable growth through data-driven strategies and AI-powered marketing.",
-    type: "website",
+    title: defaultTitle,
+    description: defaultDescription,
+    url: siteUrl,
+    siteName: "AI METRIX LLC",
     locale: "en_US",
+    type: "website",
+    images: [{ url: ogImage, alt: "AI METRIX LLC logo" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: [ogImage],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: "AI METRIX LLC",
+      url: siteUrl,
+      logo: `${siteUrl}${ogImage}`,
+      description: defaultDescription,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}/#website`,
+      url: siteUrl,
+      name: "AI METRIX LLC",
+      publisher: { "@id": `${siteUrl}/#organization` },
+      inLanguage: "en-US",
+      description: defaultDescription,
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -32,16 +91,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
         {/* GitHub Pages SPA redirect script */}
         <script
           dangerouslySetInnerHTML={{
@@ -57,6 +106,12 @@ export default function RootLayout({
                 }
               }(window.location))
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
           }}
         />
       </head>

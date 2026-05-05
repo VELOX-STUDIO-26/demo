@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -62,7 +63,7 @@ const services = [
   },
   {
     icon: Cpu,
-    title: "AI Marketing Consulting",
+    title: "AI Marketing Consultation",
     desc: "Leveraging the latest AI technologies to automate workflows and unlock predictive customer insights.",
     ideal: "Scaling businesses, Tech companies",
     outcome: "Enhanced operational efficiency and data intelligence.",
@@ -99,6 +100,15 @@ const engagementModels = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Explore AI METRIX LLC services including brand strategy, SEO, social media marketing, content, paid ads, website strategy, AI consulting, and analytics.",
+  alternates: {
+    canonical: "/services/",
+  },
+};
+
 export default function ServicesPage() {
   return (
     <>
@@ -122,7 +132,8 @@ export default function ServicesPage() {
 >
               <h1 className="font-heading font-bold text-white text-3xl md:text-[52px] leading-[1.1] mb-6"
 >
-                Digital Marketing Services Built for Visibility, Growth, and Results
+                Digital Marketing Services
+                <span className="block">From brand strategy to AI consultation.</span>
               </h1>
               <p className="text-muted text-lg max-w-2xl"
 >

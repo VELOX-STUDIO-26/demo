@@ -1,3 +1,165 @@
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Thin.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-ThinItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-ExtraLight.woff2") format("woff2"),
+       url("/fonts/grift/Grift-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-ExtraLightItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-ExtraLightItalic.woff") format("woff");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Light.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-LightItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-LightItalic.woff") format("woff");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Regular.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Italic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Medium.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-MediumItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-SemiBold.woff2") format("woff2"),
+       url("/fonts/grift/Grift-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-SemiBoldItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-SemiBoldItalic.woff") format("woff");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Bold.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-BoldItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-ExtraBold.woff2") format("woff2"),
+       url("/fonts/grift/Grift-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-ExtraBoldItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-ExtraBoldItalic.woff") format("woff");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-Black.woff2") format("woff2"),
+       url("/fonts/grift/Grift-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/grift/Grift-BlackItalic.woff2") format("woff2"),
+       url("/fonts/grift/Grift-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,7 +182,8 @@
   }
 
   body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: "Grift", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 800;
     color: var(--color-body);
     background: #fff;
     overflow-x: hidden;

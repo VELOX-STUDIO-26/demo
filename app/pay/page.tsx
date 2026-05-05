@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -45,6 +46,15 @@ const paymentTiles = [
     href: "/pay/retainer/",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "Client Payments",
+  description:
+    "Secure client payments and strategy session booking for AI METRIX LLC services.",
+  alternates: {
+    canonical: "/pay/",
+  },
+};
 
 export default function PayPage() {
   return (

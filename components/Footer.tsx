@@ -144,7 +144,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted text-[13px]">
-            &copy; 2025 AI METRIX LLC. All rights reserved.
+            &copy; 2026 AI METRIX LLC. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link

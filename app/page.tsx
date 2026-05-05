@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -63,7 +64,7 @@ const services = [
   },
   {
     icon: Cpu,
-    title: "AI Marketing Consulting",
+    title: "AI Marketing Consultation",
     desc: "Leverage AI to streamline, personalize, and scale",
   },
   {
@@ -207,6 +208,15 @@ const blogPosts = [
   },
 ];
 
+export const metadata: Metadata = {
+  title: "AI-Powered Digital Marketing Agency",
+  description:
+    "AI METRIX LLC helps small businesses and growth-focused organizations build stronger brands, increase visibility, and achieve measurable results through AI-powered digital marketing and consulting.",
+  alternates: {
+    canonical: "/",
+  },
+};
+
 export default function HomePage() {
   return (
     <>
@@ -221,13 +231,13 @@ export default function HomePage() {
                 AI-POWERED DIGITAL MARKETING
               </span>
               <h1 className="font-heading font-bold text-white text-4xl md:text-5xl lg:text-[64px] leading-[1.1] mb-6">
-                AI-Powered Digital Marketing for Businesses Ready to Grow
+                AI-Powered Digital Marketing Agency for Businesses Ready to Grow
               </h1>
               <p className="text-muted text-lg leading-relaxed max-w-2xl mb-8">
                 AI METRIX LLC helps small businesses and growth-focused
                 organizations build stronger brands, increase visibility, and
                 achieve measurable results through digital marketing and
-                AI-powered consulting.
+                consultation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/contact/" className="btn-primary">
