@@ -1,28 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import {
-  CheckCircle,
-  Eye,
-  FileEdit,
-  Lock,
-  Server,
-  ShieldCheck,
-  Trash2,
-  User,
-} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const tocItems = [
   { id: "introduction", label: "1. Introduction" },
-  { id: "information", label: "2. Information We Collect" },
-  { id: "usage", label: "3. How We Use Information" },
-  { id: "ai-processing", label: "4. AI & Data Processing" },
-  { id: "security", label: "5. Data Security" },
-  { id: "rights", label: "6. Your Rights" },
-  { id: "contact", label: "7. Contact Us" },
+  { id: "information-we-collect", label: "2. Information We Collect" },
+  { id: "how-we-collect", label: "3. How We Collect Information" },
+  { id: "how-we-use", label: "4. How We Use Information" },
+  { id: "cookies", label: "5. Cookies and Tracking Technologies" },
+  { id: "how-we-share", label: "6. How We Share Information" },
+  { id: "retention", label: "7. Data Retention" },
+  { id: "security", label: "8. Data Security" },
+  { id: "rights", label: "9. Your Privacy Rights" },
+  { id: "children", label: "10. Children's Privacy" },
+  { id: "third-party", label: "11. Third-Party Links and Services" },
+  { id: "international", label: "12. International Data Transfers" },
+  { id: "changes", label: "13. Changes to This Privacy Policy" },
+  { id: "contact", label: "14. Contact Us" },
 ];
 
 export default function PrivacyPage() {
@@ -66,7 +62,9 @@ export default function PrivacyPage() {
               <h1 className="font-heading font-bold text-white text-4xl md:text-[56px] leading-[1.1] mb-6">
                 Privacy Policy
               </h1>
-              <p className="text-white/70 text-lg">Last updated: October 2024</p>
+              <p className="text-white/70 text-lg">
+                Effective Date: May 15, 2026 | Last Updated: May 4, 2026
+              </p>
             </div>
           </div>
         </section>
@@ -95,14 +93,24 @@ export default function PrivacyPage() {
                     Need Help?
                   </h4>
                   <p className="text-caption text-sm mb-4">
-                    Our legal team is available for any specific clarifications.
+                    For privacy questions, contact us directly.
                   </p>
-                  <a
-                    href="mailto:legal@aimetrix.com"
-                    className="text-accent font-semibold text-sm hover:underline inline-flex items-center gap-2"
-                  >
-                    legal@aimetrix.com
-                  </a>
+                  <div className="space-y-2 text-sm">
+                    <a
+                      href="mailto:info@aimetrixllc.com"
+                      className="text-accent font-semibold hover:underline"
+                    >
+                      info@aimetrixllc.com
+                    </a>
+                    <div>
+                      <a
+                        href="tel:+12136450349"
+                        className="text-caption hover:text-primary"
+                      >
+                        (213) 645-0349
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </aside>
@@ -114,181 +122,273 @@ export default function PrivacyPage() {
                 </h2>
                 <div className="text-body text-[17px] leading-relaxed space-y-4">
                   <p>
-                    At AI METRIX LLC, we recognize that data is the fuel for modern enterprise, but trust is
-                    the engine. Our commitment to data protection is central to our engineering-first approach.
-                    We design our services with privacy by default, ensuring that every strategic AI
-                    implementation respects individual rights and corporate confidentiality.
+                    AI METRIX LLC ("AI METRIX," "we," "us," or "our") respects your privacy and is committed
+                    to protecting the personal information we collect through our website, forms,
+                    communications, and services. This Privacy Policy explains what information we collect,
+                    how we use it, when we share it, and the choices you may have regarding your information.
                   </p>
                   <p>
-                    This Privacy Policy explains how we collect, use, and protect your information when you
-                    interact with our website, services, and consulting platforms.
+                    This Privacy Policy applies to information collected through
+                    https://www.aimetrixllc.com/, our contact and intake forms, consultation bookings, payment
+                    pages, email and other business communications, and any related digital marketing or
+                    consulting services we provide.
                   </p>
                 </div>
               </article>
 
-              <article className="scroll-mt-32" id="information">
+              <article className="scroll-mt-32" id="information-we-collect">
                 <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
                   2. Information We Collect
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="p-8 bg-ice rounded-xl border border-border">
-                    <User className="text-accent mb-4" size={32} />
-                    <h3 className="font-heading font-semibold text-xl text-primary mb-3">
-                      Personal Identifiers
-                    </h3>
-                    <p className="text-caption">
-                      Name, professional email, company affiliation, and job title provided during
-                      consultation requests or resource downloads.
-                    </p>
-                  </div>
-                  <div className="p-8 bg-ice rounded-xl border border-border">
-                    <ShieldCheck className="text-accent mb-4" size={32} />
-                    <h3 className="font-heading font-semibold text-xl text-primary mb-3">
-                      Business Data
-                    </h3>
-                    <p className="text-caption">
-                      Operational metrics, market goals, and strategic challenges shared during the scope of
-                      engagement.
-                    </p>
-                  </div>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>We may collect the following categories of information:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      Contact information, such as your name, email address, phone number, mailing address,
+                      and job title.
+                    </li>
+                    <li>
+                      Business information, such as your company name, industry, website, business goals,
+                      budget range, and project requirements.
+                    </li>
+                    <li>
+                      Communications and inquiry information, including messages you send to us,
+                      consultation notes, support requests, and feedback.
+                    </li>
+                    <li>
+                      Transaction information related to services you purchase from us, including payment
+                      amount, billing status, invoice details, and related records. Payment card details are
+                      typically processed by third-party payment providers and not stored directly by us.
+                    </li>
+                    <li>
+                      Technical and usage information, such as IP address, browser type, device type, referral
+                      source, page visits, clicks, session activity, and approximate location derived from IP
+                      address.
+                    </li>
+                    <li>
+                      Cookie and similar technology data, including information collected through analytics,
+                      advertising, and website functionality tools where used.
+                    </li>
+                  </ul>
                 </div>
-                <p className="text-body text-[17px] leading-relaxed">
-                  We also collect technical data through cookies and telemetry, including IP addresses,
-                  browser types, and usage patterns on our website to optimize our digital presence and
-                  marketing efficiency.
-                </p>
               </article>
 
-              <article className="scroll-mt-32" id="usage">
+              <article className="scroll-mt-32" id="how-we-collect">
                 <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
-                  3. How We Use Your Information
+                  3. How We Collect Information
                 </h2>
-                <ul className="space-y-6">
-                  <li className="flex items-start gap-4">
-                    <CheckCircle className="text-accent mt-1" size={20} />
-                    <div className="text-body text-[17px] leading-relaxed">
-                      <strong className="text-primary">Service Delivery:</strong> To provide tailored AI
-                      strategy and implementation services specific to your business needs.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <CheckCircle className="text-accent mt-1" size={20} />
-                    <div className="text-body text-[17px] leading-relaxed">
-                      <strong className="text-primary">Personalization:</strong> To customize your
-                      experience and provide insights relevant to your specific industry.
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <CheckCircle className="text-accent mt-1" size={20} />
-                    <div className="text-body text-[17px] leading-relaxed">
-                      <strong className="text-primary">Marketing:</strong> To share updates on AI trends
-                      and new service offerings. Users may opt out of marketing communications at any time.
-                    </div>
-                  </li>
-                </ul>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>
+                    We may collect information directly from you, automatically through your use of our
+                    website, and from third parties.
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      Directly from you when you fill out a form, book a consultation, sign up for updates,
+                      request services, make a payment, or communicate with us.
+                    </li>
+                    <li>
+                      Automatically through cookies, pixels, analytics tools, server logs, and similar
+                      technologies.
+                    </li>
+                    <li>
+                      From third parties such as payment processors, analytics providers, advertising
+                      platforms, CRM systems, scheduling tools, or publicly available sources.
+                    </li>
+                  </ul>
+                </div>
               </article>
 
-              <article className="scroll-mt-32" id="ai-processing">
-                <div className="bg-primary text-white p-10 rounded-2xl relative overflow-hidden">
-                  <div className="relative z-10">
-                    <h2 className="font-heading font-semibold text-2xl md:text-[32px] mb-6">
-                      4. AI & Data Processing
-                    </h2>
-                    <p className="text-white/80 text-[17px] leading-relaxed mb-6">
-                      As a specialist AI consultancy, we handle data with specialized care. We do not use
-                      client-specific proprietary data to train generalized public models. All data processed
-                      through our custom AI solutions is kept within secure, isolated environments tailored for
-                      each client.
-                    </p>
-                    <p className="text-white/80 text-[17px] leading-relaxed">
-                      We utilize anonymization and synthetic data generation where possible to minimize the
-                      exposure of sensitive personal information during model testing and validation phases.
-                    </p>
-                  </div>
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 rounded-full -mr-32 -mt-32 blur-3xl" />
+              <article className="scroll-mt-32" id="how-we-use">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  4. How We Use Information
+                </h2>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>We may use personal information for the following business and commercial purposes:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>To respond to inquiries and provide requested information.</li>
+                    <li>To provide, manage, improve, and deliver our digital marketing and consulting services.</li>
+                    <li>To process transactions, issue invoices, confirm payments, and maintain financial records.</li>
+                    <li>To schedule consultations, onboarding calls, and service communications.</li>
+                    <li>To personalize website content, user experience, and communications.</li>
+                    <li>To analyze website traffic, campaign effectiveness, and service performance.</li>
+                    <li>
+                      To send marketing, educational, or promotional communications where permitted by law
+                      or where you have consented.
+                    </li>
+                    <li>
+                      To protect our website, business, clients, and users from fraud, unauthorized activity,
+                      or security threats.
+                    </li>
+                    <li>To comply with legal obligations, resolve disputes, and enforce our agreements.</li>
+                  </ul>
+                  <p>
+                    Where required by applicable law, we will rely on an appropriate legal basis for
+                    processing personal information, such as consent, performance of a contract, legitimate
+                    interests, or compliance with legal obligations.
+                  </p>
                 </div>
+              </article>
+
+              <article className="scroll-mt-32" id="cookies">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  5. Cookies and Tracking Technologies
+                </h2>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>
+                    Our website may use cookies, pixels, tags, and similar technologies to operate the site,
+                    remember preferences, analyze traffic, and support advertising or remarketing activities.
+                    You can usually control cookies through your browser settings and, where implemented,
+                    through any cookie management tools displayed on the website.
+                  </p>
+                  <p>
+                    If we use third-party analytics or advertising tools, those providers may collect
+                    information in accordance with their own privacy policies. You should review those
+                    third-party policies for additional information.
+                  </p>
+                </div>
+              </article>
+
+              <article className="scroll-mt-32" id="how-we-share">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  6. How We Share Information
+                </h2>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>We may disclose personal information to:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      Service providers and vendors that help us operate our website, business systems,
+                      communications, analytics, scheduling, and customer management tools.
+                    </li>
+                    <li>Payment processors and billing platforms that handle transactions on our behalf.</li>
+                    <li>
+                      Advertising, analytics, and technology partners where needed to measure or improve
+                      performance.
+                    </li>
+                    <li>Professional advisors, insurers, auditors, or legal counsel where reasonably necessary.</li>
+                    <li>
+                      Government agencies, regulators, law enforcement, or other parties where disclosure is
+                      required by law or necessary to protect rights, safety, or property.
+                    </li>
+                    <li>
+                      A buyer, investor, successor, or other relevant party in connection with a merger,
+                      acquisition, financing, or sale of all or part of our business.
+                    </li>
+                  </ul>
+                  <p>
+                    We do not sell personal information for monetary consideration. However, certain
+                    analytics or advertising practices may be considered "sharing" or targeted advertising
+                    under some privacy laws. Where applicable, we will provide any legally required rights
+                    or controls.
+                  </p>
+                </div>
+              </article>
+
+              <article className="scroll-mt-32" id="retention">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  7. Data Retention
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  We retain personal information for as long as reasonably necessary to fulfill the purposes
+                  described in this Privacy Policy, including providing services, maintaining business
+                  records, complying with legal obligations, resolving disputes, and enforcing agreements.
+                  Retention periods may vary depending on the nature of the information and applicable legal
+                  requirements.
+                </p>
               </article>
 
               <article className="scroll-mt-32" id="security">
                 <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
-                  5. Data Security
+                  8. Data Security
                 </h2>
-                <p className="text-body text-[17px] leading-relaxed mb-8">
-                  AI METRIX LLC employs enterprise-grade security protocols. Our engineered success approach
-                  extends to our infrastructure, where we use advanced encryption standards (AES-256) for data
-                  at rest and TLS for data in transit.
+                <p className="text-body text-[17px] leading-relaxed">
+                  We use reasonable administrative, technical, and physical safeguards designed to protect
+                  personal information against unauthorized access, use, alteration, or disclosure. However,
+                  no method of internet transmission or electronic storage is completely secure, and we
+                  cannot guarantee absolute security.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="border border-border p-6 rounded-lg text-center">
-                    <Lock className="text-primary mx-auto mb-2" size={28} />
-                    <h4 className="text-xs uppercase tracking-[0.2em] text-caption font-semibold">
-                      Encryption
-                    </h4>
-                  </div>
-                  <div className="border border-border p-6 rounded-lg text-center">
-                    <Server className="text-primary mx-auto mb-2" size={28} />
-                    <h4 className="text-xs uppercase tracking-[0.2em] text-caption font-semibold">
-                      Secure Servers
-                    </h4>
-                  </div>
-                  <div className="border border-border p-6 rounded-lg text-center">
-                    <ShieldCheck className="text-primary mx-auto mb-2" size={28} />
-                    <h4 className="text-xs uppercase tracking-[0.2em] text-caption font-semibold">
-                      Access Audit
-                    </h4>
-                  </div>
-                </div>
               </article>
 
               <article className="scroll-mt-32" id="rights">
                 <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
-                  6. Your Rights
+                  9. Your Privacy Rights
                 </h2>
-                <div className="text-body text-[17px] leading-relaxed space-y-6">
-                  <p>You have the fundamental right to control your personal information. This includes:</p>
-                  <div className="space-y-4 pt-2">
-                    <div className="flex gap-4 items-center p-4 hover:bg-ice transition-colors rounded-lg">
-                      <div className="w-10 h-10 bg-accent/15 flex items-center justify-center rounded-full">
-                        <Eye className="text-accent" size={18} />
-                      </div>
-                      <span className="font-medium text-primary">
-                        Right to access your stored data
-                      </span>
-                    </div>
-                    <div className="flex gap-4 items-center p-4 hover:bg-ice transition-colors rounded-lg">
-                      <div className="w-10 h-10 bg-accent/15 flex items-center justify-center rounded-full">
-                        <FileEdit className="text-accent" size={18} />
-                      </div>
-                      <span className="font-medium text-primary">
-                        Right to rectify inaccurate information
-                      </span>
-                    </div>
-                    <div className="flex gap-4 items-center p-4 hover:bg-ice transition-colors rounded-lg">
-                      <div className="w-10 h-10 bg-accent/15 flex items-center justify-center rounded-full">
-                        <Trash2 className="text-accent" size={18} />
-                      </div>
-                      <span className="font-medium text-primary">
-                        Right to erasure ("right to be forgotten")
-                      </span>
-                    </div>
-                  </div>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>
+                    Depending on where you live, you may have rights regarding your personal information,
+                    which may include the right to request access, correction, deletion, portability, or
+                    restriction of certain processing, as well as the right to opt out of certain uses or
+                    disclosures and to withdraw consent where processing is based on consent.
+                  </p>
+                  <p>
+                    To exercise any privacy rights available to you, please contact us at
+                    info@aimetrixllc.com. We may need to verify your identity before processing your request.
+                    We will not discriminate against you for exercising rights provided by applicable law.
+                  </p>
                 </div>
+              </article>
+
+              <article className="scroll-mt-32" id="children">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  10. Children's Privacy
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  Our website and services are intended for businesses and adults and are not directed to
+                  children under 13. We do not knowingly collect personal information directly from children
+                  under 13. If you believe a child has provided personal information to us, please contact us
+                  so we can take appropriate action.
+                </p>
+              </article>
+
+              <article className="scroll-mt-32" id="third-party">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  11. Third-Party Links and Services
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  Our website may contain links to third-party websites, platforms, or tools. We are not
+                  responsible for the privacy, security, or content practices of those third parties. Your
+                  use of third-party services is subject to their own terms and privacy policies.
+                </p>
+              </article>
+
+              <article className="scroll-mt-32" id="international">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  12. International Data Transfers
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  If you access our website or services from outside the United States, your information may
+                  be transferred to, stored in, or processed in the United States or other countries where our
+                  service providers operate. Where required by law, we will take appropriate steps to address
+                  such transfers.
+                </p>
+              </article>
+
+              <article className="scroll-mt-32" id="changes">
+                <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
+                  13. Changes to This Privacy Policy
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  We may update this Privacy Policy from time to time. When we do, we will revise the
+                  "Last Updated" date above and, where required by law, provide additional notice. Your
+                  continued use of the website or services after changes become effective constitutes
+                  acceptance of the updated policy.
+                </p>
               </article>
 
               <article className="scroll-mt-32" id="contact">
                 <h2 className="font-heading font-semibold text-2xl md:text-[32px] text-primary mb-6">
-                  7. Contact Us
+                  14. Contact Us
                 </h2>
-                <p className="text-body text-[17px] leading-relaxed mb-8">
-                  If you have questions about this Privacy Policy or how we handle your data, please reach
-                  out to our privacy officer.
-                </p>
-                <Link
-                  href="/contact/"
-                  className="inline-flex items-center justify-center gap-3 bg-primary text-white px-10 py-4 font-heading font-semibold hover:brightness-110 transition-all rounded-lg"
-                >
-                  Go to Contact Page
-                </Link>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>If you have questions about this Privacy Policy or our privacy practices, please contact us:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>AI METRIX LLC</li>
+                    <li>5830 E 2ND ST, STE 7000 #31008 CASPER, WY 82609</li>
+                    <li>info@aimetrixllc.com</li>
+                    <li>(213) 645-0349</li>
+                    <li>www.aimetrixllc.com</li>
+                  </ul>
+                </div>
               </article>
             </div>
           </div>

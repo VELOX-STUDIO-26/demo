@@ -4,6 +4,10 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import StatCounter from "@/components/StatCounter";
 import Link from "next/link";
+import { getClient } from "@/lib/sanity.client";
+import { blogPostsQuery } from "@/lib/sanity.queries";
+import { urlForImage } from "@/lib/sanity.image";
+import type { BlogPostSummary } from "@/lib/sanity.types";
 import {
   Layers,
   Search,
@@ -181,33 +185,6 @@ const testimonials = [
   },
 ];
 
-const blogPosts = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop",
-    category: "AI MARKETING",
-    title: "How Predictive AI is Reshaping Customer Acquisition in 2024",
-    excerpt:
-      "Discover the latest machine learning models that are helping small businesses compete with enterprise marketing budgets.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
-    category: "STRATEGY",
-    title: "The 5 Pillars of a Sustainable Growth Marketing Plan",
-    excerpt:
-      "Stop guessing with your ad spend. Learn the foundational elements every successful marketing strategy needs to thrive.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop",
-    category: "ANALYTICS",
-    title: "Measuring What Matters: KPIs vs. Vanity Metrics",
-    excerpt:
-      "Are you tracking the right data? A deep dive into the metrics that actually correlate with revenue growth.",
-  },
-];
-
 export const metadata: Metadata = {
   title: "AI-Powered Digital Marketing Agency",
   description:
@@ -217,7 +194,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Fetch latest 3 blog posts from Sanity
+  const posts = await getClient(false).fetch<BlogPostSummary[]>(
+    blogPostsQuery
+  );
+  const latestPosts = posts.slice(0, 3);
   return (
     <>
       <Header />
@@ -537,22 +519,28 @@ export default function HomePage() {
             </ScrollReveal>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {blogPosts.map((post, i) => (
-                <ScrollReveal key={post.title} delay={i * 150}>
+              {latestPosts.map((post, i) => (
+                <ScrollReveal key={post._id} delay={i * 150}>
                   <Link
-                    href="/blog/"
+                    href={`/blog/${post.slug}/`}
                     className="group block"
                   >
-                    <div className="aspect-video rounded-lg overflow-hidden mb-4">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
+                    <div className="aspect-video rounded-lg overflow-hidden mb-4 bg-ice">
+                      {post.image ? (
+                        <img
+                          src={urlForImage(post.image)?.width(800)?.height(450)?.fit("crop")?.url() || ""}
+                          alt={post.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-caption">
+                          <span className="text-sm">No image</span>
+                        </div>
+                      )}
                     </div>
                     <span className="inline-block px-3 py-1 bg-accent text-white text-[11px] font-medium rounded mb-3">
-                      {post.category}
+                      {post.category?.title?.toUpperCase() || "GENERAL"}
                     </span>
                     <h3 className="font-heading font-semibold text-lg text-primary leading-tight mb-2 group-hover:text-accent transition-colors">
                       {post.title}

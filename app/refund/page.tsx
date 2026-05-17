@@ -2,25 +2,26 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowRight,
-  Calendar,
-  CheckCircle,
-  Clock,
-  CreditCard,
-  FileText,
-  Mail,
-} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const tocItems = [
-  { id: "overview", label: "1. Overview" },
-  { id: "strategy-sessions", label: "2. Strategy Sessions" },
-  { id: "monthly-retainers", label: "3. Monthly Retainers" },
-  { id: "project-deposits", label: "4. Project Deposits" },
-  { id: "how-to-request", label: "5. How to Request" },
-  { id: "contact-support", label: "6. Contact Support" },
+  { id: "purpose", label: "1. Purpose and Scope" },
+  { id: "general-rule", label: "2. General Rule" },
+  { id: "consultations", label: "3. Consultations and Strategy Sessions" },
+  { id: "deposits", label: "4. Deposits and Project Kickoff Payments" },
+  { id: "project-services", label: "5. Project-Based Services" },
+  { id: "retainers", label: "6. Monthly Retainers and Recurring Services" },
+  {
+    id: "third-party-costs",
+    label: "7. Advertising Spend, Software, and Third-Party Costs",
+  },
+  { id: "request-process", label: "8. Refund Request Process" },
+  { id: "timing", label: "9. Timing of Approved Refunds" },
+  { id: "processing-fees", label: "10. Processing Fees and Chargebacks" },
+  { id: "exceptions", label: "11. Exceptions" },
+  { id: "changes", label: "12. Changes to This Policy" },
+  { id: "contact", label: "13. Contact Us" },
 ];
 
 export default function RefundPage() {
@@ -67,11 +68,14 @@ export default function RefundPage() {
               <span className="text-accent font-semibold">Refund Policy</span>
             </nav>
             <div className="max-w-3xl">
+              <span className="text-white/70 text-xs uppercase tracking-[0.2em] font-semibold mb-4 block">
+                Website use by AI METRIX LLC
+              </span>
               <h1 className="font-heading font-bold text-white text-4xl md:text-[56px] leading-[1.1] mb-4">
                 Refund Policy
               </h1>
               <p className="text-white/70 text-lg">
-                Engineered success requires transparency. Our policies ensure clarity for every engagement model.
+                Effective Date: May 15, 2026 | Last Updated: May 4, 2026
               </p>
             </div>
           </div>
@@ -98,161 +102,218 @@ export default function RefundPage() {
             </aside>
 
             <div className="space-y-16">
-              <section id="overview" className="scroll-mt-32">
+              <section id="purpose" className="scroll-mt-32">
                 <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
-                  1. Overview
+                  1. Purpose and Scope
                 </h2>
                 <div className="text-body text-[17px] leading-relaxed space-y-4">
                   <p>
-                    AI METRIX LLC is committed to client satisfaction and the delivery of high-impact AI-driven
-                    marketing solutions. As a service-based agency, our work involves significant labor,
-                    computational resources, and strategic planning.
+                    This Refund Policy explains how AI METRIX LLC handles refunds, cancellations,
+                    rescheduling requests, deposits, retainers, and other payments made through our website
+                    or directly for our digital marketing and consulting services.
                   </p>
                   <p>
-                    This policy outlines our specific approach to refunds across our various engagement models to
-                    maintain a fair and professional relationship with all our partners.
+                    This policy should be read together with our Terms and Conditions, service proposals,
+                    statements of work, invoices, subscription terms, and any separate written agreements.
                   </p>
                 </div>
               </section>
 
-              <section id="strategy-sessions" className="scroll-mt-32">
-                <div className="flex items-center gap-3 mb-6">
-                  <Calendar className="text-accent" size={22} />
-                  <h2 className="font-heading font-semibold text-2xl text-primary">
-                    2. Strategy Sessions
-                  </h2>
-                </div>
-                <div className="bg-ice rounded-xl p-6 border border-border">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-white rounded-lg border border-border p-5">
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-caption">
-                        Early Cancellation
-                      </span>
-                      <p className="text-primary font-semibold text-lg mt-2">100% Refund</p>
-                      <p className="text-caption text-sm mt-2">
-                        If cancelled more than 48 hours before the scheduled session.
-                      </p>
-                    </div>
-                    <div className="bg-white rounded-lg border border-border p-5">
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-red-500">
-                        Late Cancellation
-                      </span>
-                      <p className="text-primary font-semibold text-lg mt-2">No Refund</p>
-                      <p className="text-caption text-sm mt-2">
-                        If cancelled less than 24 hours before the scheduled session.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section id="monthly-retainers" className="scroll-mt-32">
-                <h2 className="font-heading font-semibold text-2xl text-primary mb-6">
-                  3. Monthly Retainers
+              <section id="general-rule" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  2. General Rule
                 </h2>
-                <div className="bg-primary text-white rounded-xl p-6 shadow-lg">
-                  <p className="text-white/80 text-sm mb-6">
-                    Retainers are billed in advance to secure our team&apos;s capacity and resources for your
-                    account.
+                <p className="text-body text-[17px] leading-relaxed">
+                  Because our business primarily provides professional services, strategic consulting,
+                  planning, creative work, and time-based deliverables, refunds are not automatically
+                  available once work has been scheduled, reserved, started, or delivered. Any refund
+                  determination will depend on the nature of the service purchased, the work completed,
+                  commitments already made, and the terms communicated at checkout or in a written agreement.
+                </p>
+              </section>
+
+              <section id="consultations" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  3. Consultations and Strategy Sessions
+                </h2>
+                <ul className="list-disc pl-6 space-y-2 text-body text-[17px] leading-relaxed">
+                  <li>
+                    If a paid consultation or strategy session is canceled or rescheduled at least
+                    [24/48] hours before the scheduled start time, the client may choose either a full credit
+                    toward a rescheduled session or a refund, unless otherwise stated at checkout.
+                  </li>
+                  <li>
+                    If a paid consultation or strategy session is canceled with less than [24/48] hours
+                    notice, the fee may be non-refundable because time has been reserved.
+                  </li>
+                  <li>
+                    If AI METRIX LLC needs to reschedule or cancel a paid session and a new time cannot be
+                    agreed upon, the client may request a full refund of the paid session fee.
+                  </li>
+                </ul>
+              </section>
+
+              <section id="deposits" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  4. Deposits and Project Kickoff Payments
+                </h2>
+                <ul className="list-disc pl-6 space-y-2 text-body text-[17px] leading-relaxed">
+                  <li>
+                    Deposits, booking fees, and kickoff payments are generally non-refundable once a project
+                    slot has been reserved or onboarding has begun.
+                  </li>
+                  <li>
+                    If a project is canceled before any substantive work begins, AI METRIX LLC may, at its
+                    discretion, issue a partial refund after deducting administrative, scheduling,
+                    discovery, or setup costs already incurred.
+                  </li>
+                  <li>
+                    Any special deposit terms stated in a proposal, invoice, or service agreement will
+                    control.
+                  </li>
+                </ul>
+              </section>
+
+              <section id="project-services" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  5. Project-Based Services
+                </h2>
+                <ul className="list-disc pl-6 space-y-2 text-body text-[17px] leading-relaxed">
+                  <li>
+                    Payments for completed milestones, delivered strategy documents, completed design work,
+                    approved content, campaign setup, or time already spent are non-refundable.
+                  </li>
+                  <li>
+                    If a client cancels a project after work has started, any refund will be limited to
+                    prepaid amounts for work not yet performed, less any non-recoverable costs, committed
+                    third-party expenses, and the value of work already completed.
+                  </li>
+                  <li>
+                    If the client has approved a deliverable or milestone, the corresponding fee is
+                    non-refundable.
+                  </li>
+                </ul>
+              </section>
+
+              <section id="retainers" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  6. Monthly Retainers and Recurring Services
+                </h2>
+                <ul className="list-disc pl-6 space-y-2 text-body text-[17px] leading-relaxed">
+                  <li>
+                    Monthly retainers, subscriptions, and recurring service fees are billed in advance unless
+                    otherwise stated in writing.
+                  </li>
+                  <li>
+                    Cancellation requests must be submitted before the next billing date or within the notice
+                    period stated in the client&apos;s service agreement.
+                  </li>
+                  <li>
+                    Once a new billing cycle has started, that period&apos;s retainer or subscription fee is
+                    generally non-refundable because capacity and service availability have been reserved.
+                  </li>
+                  <li>
+                    If a separate written service agreement includes a required minimum term or advance notice
+                    period, that agreement will control.
+                  </li>
+                </ul>
+              </section>
+
+              <section id="third-party-costs" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  7. Advertising Spend, Software, and Third-Party Costs
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  Amounts paid to or committed for third-party platforms, ad spend, domain registrations,
+                  hosting, software subscriptions, creative tools, freelancers, media buys, or other external
+                  vendors are non-refundable once incurred or committed, unless the third-party provider
+                  itself issues a refund.
+                </p>
+              </section>
+
+              <section id="request-process" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  8. Refund Request Process
+                </h2>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>
+                    To request a refund, cancellation, or billing review, please contact us at
+                    info@aimetrixllc.com and include:
                   </p>
-                  <ul className="space-y-3 text-sm">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle size={16} className="text-accent mt-1" />
-                      <span>
-                        Cancellations stop all future billing cycles immediately.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle size={16} className="text-accent mt-1" />
-                      <span>
-                        Once work has commenced for the current month, no refunds are issued for that period.
-                      </span>
-                    </li>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Your full name and business name</li>
+                    <li>The service purchased</li>
+                    <li>The payment date and amount</li>
+                    <li>The reason for the request</li>
+                    <li>Any supporting documents or relevant communication</li>
                   </ul>
-                </div>
-              </section>
-
-              <section id="project-deposits" className="scroll-mt-32">
-                <h2 className="font-heading font-semibold text-2xl text-primary mb-6">
-                  4. Project Deposits
-                </h2>
-                <div className="border border-dashed border-border rounded-xl p-6">
-                  <p className="text-caption mb-6">
-                    For custom project builds, deposits are refundable minus work already completed.
+                  <p>
+                    We may request additional information before making a decision. Refund decisions will be
+                    communicated in writing.
                   </p>
-                  <div className="flex flex-col md:flex-row gap-6">
-                    <div className="w-32 h-32 bg-ice rounded-full flex items-center justify-center text-center text-primary text-sm font-semibold">
-                      $200
-                      <br />
-                      Per Hour
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-semibold text-lg text-primary mb-2">
-                        Deduction Logic
-                      </h3>
-                      <p className="text-caption text-sm">
-                        Refund = (Initial Deposit) - (Hours Logged x $200/hr). All logs are provided
-                        transparently upon request.
-                      </p>
-                    </div>
-                  </div>
                 </div>
               </section>
 
-              <section id="how-to-request" className="scroll-mt-32">
-                <h2 className="font-heading font-semibold text-2xl text-primary mb-6">
-                  5. How to Request
+              <section id="timing" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  9. Timing of Approved Refunds
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-ice rounded-xl p-6 border border-border">
-                    <p className="text-caption text-sm mb-4">
-                      To initiate a refund request, please send a formal email with the following details:
-                    </p>
-                    <div className="inline-flex items-center gap-2 text-primary font-semibold">
-                      <Mail size={16} className="text-accent" />
-                      billing@aimetrix.com
-                    </div>
-                  </div>
-                  <div className="bg-white rounded-xl p-6 border border-border">
-                    <p className="text-xs uppercase tracking-[0.2em] text-caption mb-3">
-                      Required Data
-                    </p>
-                    <ul className="space-y-2 text-sm text-body">
-                      <li className="flex items-start gap-2">
-                        <FileText size={16} className="text-accent mt-0.5" />
-                        Invoice Number
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CreditCard size={16} className="text-accent mt-0.5" />
-                        Account Name
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <Clock size={16} className="text-accent mt-0.5" />
-                        Reason for Request
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+                <p className="text-body text-[17px] leading-relaxed">
+                  If a refund is approved, it will generally be issued to the original payment method within
+                  [5-10] business days after approval, unless a different timing applies through the payment
+                  provider or financial institution. Actual posting times may vary based on the payment
+                  method, bank, or card issuer.
+                </p>
               </section>
 
-              <section id="contact-support" className="scroll-mt-32">
-                <div className="relative overflow-hidden bg-primary rounded-2xl p-10 text-center text-white">
-                  <div className="relative z-10">
-                    <h3 className="font-heading font-semibold text-2xl mb-3">
-                      Still have questions?
-                    </h3>
-                    <p className="text-white/70 mb-6">
-                      Our support team is available 24/7 to assist with billing inquiries or service modifications.
-                    </p>
-                    <Link
-                      href="/contact/"
-                      className="inline-flex items-center justify-center gap-2 bg-white text-primary px-6 py-3 rounded-lg font-semibold"
-                    >
-                      Contact Support
-                      <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,166,251,0.35),_transparent_60%)]" />
+              <section id="processing-fees" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  10. Processing Fees and Chargebacks
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  To the extent permitted by law and disclosed in advance, non-refundable payment processing
+                  fees or third-party transaction costs may be deducted from approved refunds. If you believe
+                  there has been a billing error, please contact us first before initiating a chargeback so we
+                  can attempt to resolve the issue promptly.
+                </p>
+              </section>
+
+              <section id="exceptions" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  11. Exceptions
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  Nothing in this Refund Policy is intended to limit any non-waivable rights you may have
+                  under applicable law. AI METRIX LLC may also choose, in its sole discretion, to provide a
+                  refund, credit, or rescheduling accommodation in circumstances involving verified
+                  emergencies, service interruptions caused by us, or other exceptional situations.
+                </p>
+              </section>
+
+              <section id="changes" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  12. Changes to This Policy
+                </h2>
+                <p className="text-body text-[17px] leading-relaxed">
+                  We may update this Refund Policy from time to time. Updated versions will be posted on the
+                  website with a revised "Last Updated" date. The version in effect at the time of purchase
+                  will generally apply to that purchase unless required by law or otherwise communicated.
+                </p>
+              </section>
+
+              <section id="contact" className="scroll-mt-32">
+                <h2 className="font-heading font-semibold text-2xl text-primary mb-4">
+                  13. Contact Us
+                </h2>
+                <div className="text-body text-[17px] leading-relaxed space-y-4">
+                  <p>If you have questions about this Refund Policy, please contact us:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>AI METRIX LLC</li>
+                    <li>5830 E 2ND ST, STE 7000 #31008 CASPER, WY 82609</li>
+                    <li>info@aimetrixllc.com</li>
+                    <li>(213) 645-0349</li>
+                    <li>www.aimetrixllc.com</li>
+                  </ul>
                 </div>
               </section>
             </div>
