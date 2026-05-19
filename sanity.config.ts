@@ -1,7 +1,7 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import { visionTool } from "@sanity/vision";
-import { schemaTypes } from "./sanity/schemaTypes";
+import { schemaTypes } from "./sanity/schemaTypes/index";
 
 const projectId = "ix0f1c5t";
 const dataset = "production";
