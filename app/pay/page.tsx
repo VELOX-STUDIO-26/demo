@@ -22,7 +22,6 @@ const paymentTiles = [
     desc: "One-time payment for your scheduled consultation",
     action: "Pay Now",
     href: "/pay/checkout/",
-    price: "$497.00",
   },
   {
     icon: FileText,
@@ -65,7 +64,7 @@ export default function PayPage() {
         <section className="bg-primary pt-[72px]">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
             <h1 className="font-heading font-bold text-white text-3xl md:text-5xl leading-[1.1] mb-6 max-w-3xl">
-              Secure Client Payments & Consultation Booking
+              Payment & Consultation Booking
             </h1>
             <p className="text-muted text-lg max-w-2xl mb-8">
               Fast, secure, and hassle-free. All transactions are encrypted and protected.
@@ -109,11 +108,6 @@ export default function PayPage() {
                           {tile.title}
                         </h3>
                         <p className="text-caption text-base mb-4">{tile.desc}</p>
-                        {tile.price && (
-                          <p className="font-heading font-bold text-2xl text-accent mb-4">
-                            {tile.price}
-                          </p>
-                        )}
                         <Link
                           href={tile.href}
                           className="btn-primary text-sm py-3 px-6 mt-auto inline-block"

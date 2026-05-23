@@ -382,29 +382,6 @@ export default async function BlogPostPage({ params }: PageProps) {
               </div>
             </div>
 
-            <div className="bg-ice rounded-xl p-8 border border-accent/10">
-              <h3 className="font-heading font-semibold text-xl text-primary mb-2">
-                Engineered Success
-              </h3>
-              <p className="text-caption text-sm mb-6">
-                Join 12,000+ marketing leaders receiving our bi-weekly intelligence briefings.
-              </p>
-              <form className="space-y-4">
-                <div>
-                  <input
-                    className="w-full bg-white border border-border rounded-lg px-4 py-3 focus:ring-accent focus:border-accent transition-all text-sm"
-                    placeholder="Email Address"
-                    type="email"
-                  />
-                </div>
-                <button className="w-full bg-primary text-white font-heading font-semibold py-3 rounded-lg hover:brightness-110 transition-colors active:scale-95">
-                  Subscribe Now
-                </button>
-              </form>
-              <p className="text-[11px] text-caption mt-4 text-center">
-                No spam. Only data. Unsubscribe anytime.
-              </p>
-            </div>
           </aside>
         </section>
 

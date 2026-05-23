@@ -13,7 +13,14 @@
       "Bash(gh run *)",
       "WebFetch(domain:velox-studio-26.github.io)",
       "Bash(curl -s https://velox-studio-26.github.io/demo/)",
-      "Bash(curl *)"
+      "Bash(curl *)",
+      "Bash(npx sanity *)",
+      "Bash(python \"C:\\\\Users\\\\sabbi\\\\.claude\\\\skills\\\\docx\\\\scripts\\\\office\\\\unpack.py\" \"D:\\\\Main project\\\\Order\\\\blogs\\(1\\).docx\" \"D:\\\\Main project\\\\Order\\\\blogs_unpacked\")",
+      "Bash(pandoc \"D:\\\\Main project\\\\Order\\\\blogs\\(1\\).docx\" -o \"D:\\\\Main project\\\\Order\\\\blogs_extracted.md\")",
+      "Bash(python3 *)",
+      "Bash(mammoth \"D:\\\\Main project\\\\Order\\\\blogs\\(1\\).docx\" --output-dir=\"D:\\\\Main project\\\\Order\")",
+      "Bash(mammoth \"D:/Main project/Order/blogs\\(1\\).docx\")",
+      "Bash(git rm *)"
     ]
   }
 }

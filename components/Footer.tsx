@@ -124,10 +124,10 @@ export default function Footer() {
             </h4>
             <p className="text-muted text-[15px] mb-4">
               <a
-                href="mailto:hello@aimetrix.com"
+                href="mailto:info@aimetrixllc.com"
                 className="hover:text-accent transition-colors"
               >
-                hello@aimetrix.com
+                info@aimetrixllc.com
               </a>
             </p>
             <Link href="/contact/" className="btn-primary w-full text-center text-sm mb-4">

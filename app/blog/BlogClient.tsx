@@ -288,32 +288,6 @@ export default function BlogClient({
           </div>
         </section>
 
-        <section className="bg-primary py-16">
-          <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <ScrollReveal>
-              <h3 className="font-heading font-semibold text-2xl md:text-[32px] text-white mb-4">
-                Get Marketing Insights in Your Inbox
-              </h3>
-              <p className="text-muted text-base max-w-2xl mx-auto mb-10">
-                Practical strategies, AI tips, and growth ideas — delivered
-                weekly. No spam.
-              </p>
-              <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-grow px-6 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-muted focus:ring-2 focus:ring-accent outline-none text-base"
-                />
-                <button
-                  type="submit"
-                  className="bg-accent text-white font-heading font-bold px-8 py-4 rounded-lg hover:brightness-110 transition-all whitespace-nowrap"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </ScrollReveal>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

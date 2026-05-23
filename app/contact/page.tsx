@@ -250,10 +250,10 @@ export default function ContactPage() {
                             Email us at
                           </p>
                           <a
-                            href="mailto:hello@aimetrix.com"
+                            href="mailto:info@aimetrixllc.com"
                             className="font-heading font-bold text-xl text-primary hover:text-accent transition-colors"
                           >
-                            hello@aimetrix.com
+                            info@aimetrixllc.com
                           </a>
                         </div>
                       </div>

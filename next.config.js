@@ -2,7 +2,8 @@
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
-  output: 'export',
+  // Use 'export' for production build, 'standalone' for dev
+  output: process.env.NODE_ENV === 'production' ? 'export' : 'standalone',
   distDir: 'dist',
   basePath: isProd ? '/demo' : '',
   assetPrefix: isProd ? '/demo' : '',
