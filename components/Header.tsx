@@ -84,7 +84,7 @@ export default function Header() {
                 href="/pay/"
                 className="font-body font-medium text-[15px] text-white hover:text-accent transition-colors"
               >
-                Pay Online
+                Get a Quote
               </Link>
               <Link href="/contact/" className="btn-primary text-sm px-6 py-3">
                 Book Consultation
