@@ -80,7 +80,7 @@ export default function Header() {
             {/* Desktop Actions */}
             <div className="hidden md:flex items-center gap-6">
               <Link
-                href="/pay/"
+                href="/contact/"
                 className="font-body font-medium text-[15px] text-white hover:text-accent transition-colors"
               >
                 Get a Quote

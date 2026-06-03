@@ -12,6 +12,12 @@ import {
   CreditCard,
   Handshake,
   Plus,
+  Send,
+  User,
+  AtSign,
+  Building2,
+  MessageSquare,
+  CheckCircle,
 } from "lucide-react";
 
 const industries = [
@@ -60,11 +66,11 @@ const faqs = [
 ];
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState<"idle" | "success">("idle");
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -76,9 +82,38 @@ export default function ContactPage() {
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
-      setFormState("success");
-      form.reset();
+    if (Object.keys(newErrors).length > 0) return;
+
+    setFormState("submitting");
+
+    const payload = {
+      name: formData.get("name")?.toString().trim(),
+      email: formData.get("email")?.toString().trim(),
+      business: formData.get("business")?.toString().trim(),
+      industry: formData.get("industry")?.toString().trim(),
+      service: formData.get("service")?.toString().trim(),
+      budget: formData.get("budget")?.toString().trim(),
+      message: formData.get("message")?.toString().trim(),
+    };
+
+    try {
+      const res = await fetch("/.netlify/functions/send-quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setFormState("success");
+        form.reset();
+      } else {
+        const data = await res.json().catch(() => ({}));
+        alert(data.error || "Something went wrong. Please try again.");
+        setFormState("idle");
+      }
+    } catch {
+      alert("Failed to send. Please check your connection and try again.");
+      setFormState("idle");
     }
   };
 
@@ -108,19 +143,7 @@ export default function ContactPage() {
                   {formState === "success" ? (
                     <div className="text-center py-12">
                       <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg
-                          className="w-8 h-8 text-green-600"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
+                        <CheckCircle className="w-8 h-8 text-green-600" />
                       </div>
                       <h3 className="font-heading font-semibold text-2xl text-primary mb-2">
                         Message Sent!
@@ -143,34 +166,52 @@ export default function ContactPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label className="form-label">Full Name</label>
-                          <input
-                            type="text"
-                            name="name"
-                            placeholder="John Doe"
-                            className={`form-input ${errors.name ? "is-invalid" : ""}`}
-                          />
+                          <div className="relative">
+                            <User
+                              size={18}
+                              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
+                            />
+                            <input
+                              type="text"
+                              name="name"
+                              placeholder="John Doe"
+                              className={`form-input pl-10 ${errors.name ? "is-invalid" : ""}`}
+                            />
+                          </div>
                           <span className="form-error">Please enter your name.</span>
                         </div>
                         <div>
                           <label className="form-label">Business Email</label>
-                          <input
-                            type="email"
-                            name="email"
-                            placeholder="john@company.com"
-                            className={`form-input ${errors.email ? "is-invalid" : ""}`}
-                          />
+                          <div className="relative">
+                            <AtSign
+                              size={18}
+                              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
+                            />
+                            <input
+                              type="email"
+                              name="email"
+                              placeholder="john@company.com"
+                              className={`form-input pl-10 ${errors.email ? "is-invalid" : ""}`}
+                            />
+                          </div>
                           <span className="form-error">Please enter a valid email.</span>
                         </div>
                       </div>
 
                       <div>
                         <label className="form-label">Business Name</label>
-                        <input
-                          type="text"
-                          name="business"
-                          placeholder="Acme Corp"
-                          className="form-input"
-                        />
+                        <div className="relative">
+                          <Building2
+                            size={18}
+                            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
+                          />
+                          <input
+                            type="text"
+                            name="business"
+                            placeholder="Acme Corp"
+                            className="form-input pl-10"
+                          />
+                        </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -209,20 +250,37 @@ export default function ContactPage() {
 
                       <div>
                         <label className="form-label">Message</label>
-                        <textarea
-                          name="message"
-                          rows={4}
-                          placeholder="Tell us about your goals..."
-                          className={`form-input ${errors.message ? "is-invalid" : ""}`}
-                        />
+                        <div className="relative">
+                          <MessageSquare
+                            size={18}
+                            className="absolute left-3 top-4 text-muted"
+                          />
+                          <textarea
+                            name="message"
+                            rows={4}
+                            placeholder="Tell us about your goals..."
+                            className={`form-input pl-10 pt-3 ${errors.message ? "is-invalid" : ""}`}
+                          />
+                        </div>
                         <span className="form-error">Please enter a message.</span>
                       </div>
 
-                      <button type="submit" className="btn-primary w-full">
-                        Send Message
+                      <button
+                        type="submit"
+                        disabled={formState === "submitting"}
+                        className="btn-primary w-full disabled:opacity-60 disabled:cursor-not-allowed"
+                      >
+                        {formState === "submitting" ? (
+                          "Sending..."
+                        ) : (
+                          <>
+                            <Send size={16} className="mr-2" />
+                            Send Message
+                          </>
+                        )}
                       </button>
                       <p className="text-center text-caption text-sm">
-                        🔒 Your information is never shared. We respond within 1–2 business days.
+                        Your information is never shared. We respond within 1–2 business days.
                       </p>
                     </form>
                   )}
