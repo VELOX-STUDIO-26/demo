@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
 
-const logoSrc =
-  process.env.NODE_ENV === "production" ? "/demo/logo.jpg" : "/logo.jpg";
+const logoSrc = "/logo.jpg";
 
 const services = [
   "Brand Strategy",

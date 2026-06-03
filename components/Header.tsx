@@ -5,8 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 
-const logoSrc =
-  process.env.NODE_ENV === "production" ? "/demo/logo.jpg" : "/logo.jpg";
+const logoSrc = "/logo.jpg";
 
 const navLinks = [
   { href: "/", label: "Home" },
