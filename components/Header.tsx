@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 
-const logoSrc = "/logo.jpg";
+const logoSrc = "/logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -56,7 +56,7 @@ export default function Header() {
               <img
                 src={logoSrc}
                 alt="AI METRIX LLC"
-                className="h-12 w-auto object-contain"
+                className="h-9 w-auto object-contain rounded"
               />
             </Link>
 

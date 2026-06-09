@@ -7,7 +7,7 @@ const siteUrl = rawSiteUrl.replace(/\/$/, "");
 const defaultTitle = "AI METRIX LLC - AI-Powered Digital Marketing";
 const defaultDescription =
   "AI METRIX LLC helps small businesses and growth-focused organizations build stronger brands, increase visibility, and achieve measurable results through AI-powered digital marketing and consulting.";
-const ogImage = "/logo.jpg";
+const ogImage = "/og-image.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Linkedin, Instagram, Facebook, Twitter } from "lucide-react";
 
-const logoSrc = "/logo.jpg";
+const logoSrc = "/logo.png";
 
 const services = [
   "Brand Strategy",
@@ -21,6 +21,49 @@ const company = [
   { href: "/contact/", label: "Contact" },
 ];
 
+const socialLinks = [
+  {
+    href: "https://www.facebook.com/aimetrixllc",
+    label: "Facebook",
+    Icon: Facebook,
+  },
+  {
+    href: "https://www.instagram.com/aimetrixllc/",
+    label: "Instagram",
+    Icon: Instagram,
+  },
+  {
+    href: "https://www.linkedin.com/company/aimetrixllc/",
+    label: "LinkedIn",
+    Icon: Linkedin,
+  },
+  {
+    href: "https://www.youtube.com/@AIMETRIXLLC",
+    label: "YouTube",
+    Icon: ({ size }: { size: number }) => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M2.5 17a4.5 4.5 0 0 1-1.5-4A4.5 4.5 0 0 1 2.5 9a45 45 0 0 1 19 0 4.5 4.5 0 0 1 1.5 4 4.5 4.5 0 0 1-1.5 4 45 45 0 0 1-19 0Z" />
+        <polygon points="9 15 15 12 9 9 9 15" />
+      </svg>
+    ),
+  },
+  {
+    href: "https://x.com/aimetrixllc",
+    label: "X",
+    Icon: Twitter,
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-primary text-white">
@@ -32,49 +75,25 @@ export default function Footer() {
               <img
                 src={logoSrc}
                 alt="AI METRIX LLC"
-                className="h-14 w-auto object-contain rounded"
+                className="h-10 w-auto object-contain rounded"
               />
             </Link>
             <p className="text-muted text-[15px] leading-relaxed mb-6">
               We don&apos;t just market — we engineer sustainable growth.
             </p>
             <div className="flex gap-3">
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="LinkedIn"
-              >
-                <Linkedin size={18} />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="Instagram"
-              >
-                <Instagram size={18} />
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="Facebook"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-icon"
-                aria-label="X (Twitter)"
-              >
-                <Twitter size={18} />
-              </a>
+              {socialLinks.map(({ href, label, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                  aria-label={label}
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
 
