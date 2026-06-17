@@ -16,6 +16,7 @@ import {
   Users,
   Code,
   BarChart2,
+  Mail,
 } from "lucide-react";
 
 const values = [
@@ -106,6 +107,15 @@ export default function AboutPage() {
                   marketing solutions. Our work is driven by purpose, performance, and the success of every
                   client we serve
                 </p>
+              </div>
+              <div className="pt-4">
+                <a
+                  href="mailto:founder@aimetrixllc.com"
+                  className="inline-flex items-center text-accent font-medium hover:underline transition-colors"
+                >
+                  <Mail size={16} className="mr-2" />
+                  founder@aimetrixllc.com
+                </a>
               </div>
             </ScrollReveal>
             <ScrollReveal

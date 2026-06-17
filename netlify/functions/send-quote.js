@@ -66,7 +66,7 @@ exports.handler = async (event, context) => {
 
   try {
     await resend.emails.send({
-      from: "AI METRIX <info@aimetrixllc.com>",
+      from: "AI METRIX <noreply@aimetrixllc.com>",
       to: "info@aimetrixllc.com",
       subject: `Quote Request from ${name}`,
       html: htmlContent,
