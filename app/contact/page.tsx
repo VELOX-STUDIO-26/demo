@@ -97,7 +97,7 @@ export default function ContactPage() {
     };
 
     try {
-      const res = await fetch("/.netlify/functions/send-quote", {
+      const res = await fetch("/api/send-quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
